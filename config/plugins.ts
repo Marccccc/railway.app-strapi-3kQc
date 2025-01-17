@@ -8,11 +8,12 @@ export default ({ env }) => ({
         config: {
             provider: "strapi-provider-upload-tencent-cloud-storage",
             providerOptions: {
-                CDNDomain: "imgmarc.site",
+                CDNDomain: "https://imgmarc.site",
                 SecretId: env("COS_SecretId"),
                 SecretKey: env("COS_SecretKey"),
                 Region: env("COS_Region"),
                 Bucket: env("COS_Bucket"),
+                StorageRootPath: "cms-image",
             },
         },
     },
