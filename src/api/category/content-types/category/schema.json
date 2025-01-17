@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "categories",
   "info": {
     "singularName": "category",
@@ -12,12 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "category": {
-      "type": "enumeration",
-      "enum": [
-        "Animals",
-        "Weather"
-      ]
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }
