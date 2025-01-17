@@ -4,7 +4,8 @@
   "info": {
     "singularName": "dictionary",
     "pluralName": "dictionaries",
-    "displayName": "dictionary"
+    "displayName": "Dictionary",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
