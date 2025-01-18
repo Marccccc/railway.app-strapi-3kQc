@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "means",
+  "info": {
+    "singularName": "mean",
+    "pluralName": "means",
+    "displayName": "Mean",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "enName": {
+      "type": "string"
+    },
+    "article": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "dictionary": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::dictionary.dictionary",
+      "inversedBy": "means"
+    },
+    "theme": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::theme.theme",
+      "inversedBy": "means"
+    }
+  }
+}

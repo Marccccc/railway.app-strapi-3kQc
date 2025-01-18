@@ -12,8 +12,45 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "Letter": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z"
+      ]
+    },
+    "slug": {
       "type": "string"
+    },
+    "means": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::mean.mean",
+      "mappedBy": "dictionary"
     }
   }
 }
