@@ -607,7 +607,7 @@ export interface ApiDictionaryDictionary extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    Letter: Schema.Attribute.Enumeration<
+    letter: Schema.Attribute.Enumeration<
       [
         'A',
         'B',
@@ -639,6 +639,7 @@ export interface ApiDictionaryDictionary extends Struct.CollectionTypeSchema {
     >;
     slug: Schema.Attribute.String;
     means: Schema.Attribute.Relation<'oneToMany', 'api::mean.mean'>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
