@@ -17,6 +17,9 @@
     },
     "slug": {
       "type": "string"
+    },
+    "showFlag": {
+      "type": "boolean"
     }
   }
 }
