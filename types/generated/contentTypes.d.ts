@@ -785,7 +785,7 @@ export interface ApiMeanMean extends Struct.CollectionTypeSchema {
     enName: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     article: Schema.Attribute.Relation<'oneToOne', 'api::article.article'>;
@@ -801,6 +801,12 @@ export interface ApiMeanMean extends Struct.CollectionTypeSchema {
     >;
     theme: Schema.Attribute.Relation<'manyToOne', 'api::theme.theme'>;
     seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    scenarios: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
