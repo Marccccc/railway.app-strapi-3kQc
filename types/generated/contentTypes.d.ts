@@ -751,6 +751,7 @@ export interface ApiMeanMean extends Struct.CollectionTypeSchema {
       'api::dictionary.dictionary'
     >;
     theme: Schema.Attribute.Relation<'manyToOne', 'api::theme.theme'>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -790,7 +791,7 @@ export interface ApiThemeTheme extends Struct.CollectionTypeSchema {
     sort: Schema.Attribute.Integer &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &

@@ -51,6 +51,11 @@
       "relation": "manyToOne",
       "target": "api::theme.theme",
       "inversedBy": "means"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }
