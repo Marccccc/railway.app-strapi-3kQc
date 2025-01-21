@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "dream_themes",
+  "info": {
+    "singularName": "dream-theme",
+    "pluralName": "dream-themes",
+    "displayName": "Dream Theme"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

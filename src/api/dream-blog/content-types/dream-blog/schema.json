@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "dream_blogs",
+  "info": {
+    "singularName": "dream-blog",
+    "pluralName": "dream-blogs",
+    "displayName": "Dream Blog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

@@ -606,6 +606,12 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -677,6 +683,63 @@ export interface ApiDictionaryDictionary extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::dictionary.dictionary'
+    > &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDreamDictionaryDreamDictionary
+  extends Struct.SingleTypeSchema {
+  collectionName: 'dream_dictionaries';
+  info: {
+    singularName: 'dream-dictionary';
+    pluralName: 'dream-dictionaries';
+    displayName: 'Dream Dictionary';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::dream-dictionary.dream-dictionary'
+    > &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDreamThemeDreamTheme extends Struct.SingleTypeSchema {
+  collectionName: 'dream_themes';
+  info: {
+    singularName: 'dream-theme';
+    pluralName: 'dream-themes';
+    displayName: 'Dream Theme';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::dream-theme.dream-theme'
     > &
       Schema.Attribute.Private;
   };
@@ -1323,6 +1386,8 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::category.category': ApiCategoryCategory;
       'api::dictionary.dictionary': ApiDictionaryDictionary;
+      'api::dream-dictionary.dream-dictionary': ApiDreamDictionaryDreamDictionary;
+      'api::dream-theme.dream-theme': ApiDreamThemeDreamTheme;
       'api::home.home': ApiHomeHome;
       'api::mean.mean': ApiMeanMean;
       'api::theme.theme': ApiThemeTheme;

@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "dream_dictionaries",
+  "info": {
+    "singularName": "dream-dictionary",
+    "pluralName": "dream-dictionaries",
+    "displayName": "Dream Dictionary"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}
