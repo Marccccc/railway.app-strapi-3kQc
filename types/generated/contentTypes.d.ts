@@ -688,6 +688,34 @@ export interface ApiDictionaryDictionary extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDreamBlogDreamBlog extends Struct.SingleTypeSchema {
+  collectionName: 'dream_blogs';
+  info: {
+    singularName: 'dream-blog';
+    pluralName: 'dream-blogs';
+    displayName: 'Dream Blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::dream-blog.dream-blog'
+    > &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDreamDictionaryDreamDictionary
   extends Struct.SingleTypeSchema {
   collectionName: 'dream_dictionaries';
@@ -1386,6 +1414,7 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::category.category': ApiCategoryCategory;
       'api::dictionary.dictionary': ApiDictionaryDictionary;
+      'api::dream-blog.dream-blog': ApiDreamBlogDreamBlog;
       'api::dream-dictionary.dream-dictionary': ApiDreamDictionaryDreamDictionary;
       'api::dream-theme.dream-theme': ApiDreamThemeDreamTheme;
       'api::home.home': ApiHomeHome;
