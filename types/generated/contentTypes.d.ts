@@ -812,7 +812,7 @@ export interface ApiMeanMean extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    symbols: Schema.Attribute.RichText &
+    cultural: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -843,6 +843,12 @@ export interface ApiMeanMean extends Struct.CollectionTypeSchema {
         };
       }>;
     tags: Schema.Attribute.JSON &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    faq: Schema.Attribute.JSON &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

@@ -99,7 +99,7 @@
       },
       "type": "richtext"
     },
-    "symbols": {
+    "cultural": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -140,6 +140,14 @@
       "type": "string"
     },
     "tags": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "json"
+    },
+    "faq": {
       "pluginOptions": {
         "i18n": {
           "localized": true
