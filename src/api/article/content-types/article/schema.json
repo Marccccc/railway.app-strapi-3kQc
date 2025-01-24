@@ -88,6 +88,12 @@
         }
       },
       "type": "text"
+    },
+    "theme": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::theme.theme",
+      "mappedBy": "article"
     }
   }
 }

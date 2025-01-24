@@ -543,7 +543,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     content: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -612,6 +612,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
